@@ -297,6 +297,7 @@ func (a App) lookupCurrentIPsFromDNS(domains map[string][]string) (domainTypeIPs
 				}
 				recMap[name][recType] = ar.IP
 			}
+
 			for _, n := range names {
 				name := libdns.AbsoluteName(n, zone)
 				ips := make(map[string][]netip.Addr)
