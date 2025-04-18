@@ -369,6 +369,9 @@ func (a App) allDomains() map[string][]string {
 				// Not in this zone.
 				continue
 			}
+			if name == "*" {
+				continue
+			}
 			a.logger.Info("Adding dynamic domain", zap.String("domain", name))
 			d[zone] = append(d[zone], name)
 		}
